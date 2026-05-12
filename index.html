@@ -886,17 +886,16 @@
         '</div>'+
 
         '<div class="tip"><strong>Two ways to answer:</strong><br>'+
-        '1. Tap the text box and use the <strong>mic key on your keyboard</strong> to speak — tap again to stop.<br>'+
-        '2. Record a voice memo in your Voice Memos app, then tap <strong>Upload Recording</strong> below — Claude will transcribe it automatically.</div>'+
+        '1. Tap the text box and use the <strong>mic key on your keyboard</strong> to speak - tap again to stop.<br>'+
+        '2. Record a voice memo in your Voice Memos app, then tap <strong>Upload Recording</strong> below - Claude will transcribe it automatically.</div>'+
 
         '<textarea id="ans-ta" placeholder="Tap here and use the keyboard mic to speak, or type your answer..." style="min-height:100px;margin-bottom:8px">'+ansVal+'</textarea>'+
         '<div id="wc" style="font-size:10px;color:var(--faint);margin-bottom:10px">'+(ansVal.trim()?ansVal.trim().split(/\s+/).length+" words":"")+' </div>'+
 
-        '<label style="display:block;border:2px dashed rgba(201,168,76,.3);border-radius:10px;padding:16px;text-align:center;cursor:pointer;margin-bottom:10px;background:rgba(201,168,76,.04)" id="upload-label">'+
-        '<input type="file" accept="audio/*" id="audio-upload" style="display:none" onchange="handleUpload(event)">'+
-        '<div style="font-size:22px;margin-bottom:5px">&#127908;</div>'+
-        '<div style="font-size:13px;color:var(--dim)">Upload Voice Memo</div>'+
-        '<div style="font-size:10px;color:var(--faint);margin-top:3px">Any audio file from your Voice Memos app</div>'+
+        '<label style="display:block;border:2px dashed rgba(201,168,76,.3);border-radius:10px;padding:16px;text-align:center;cursor:pointer;margin-bottom:10px;background:rgba(201,168,76,.04)">'+
+        '<input type="file" accept="audio/*" style="display:none" id="audio-upload" onchange="handleUpload(event)">'+
+        '<div style="font-size:13px;color:var(--dim);margin-bottom:3px">Upload Voice Memo</div>'+
+        '<div style="font-size:10px;color:var(--faint)">Tap to select audio file - Claude will transcribe it</div>'+
         '</label>'+
         '<div id="upload-status"></div>'+
 
@@ -964,56 +963,13 @@
       });
     }
 
-    async function handleUpload(event){
+    function handleUpload(event){
       var file=event.target.files[0];
       if(!file){return;}
       var statusEl=document.getElementById("upload-status");
-      var label=document.getElementById("upload-label");
-      if(label){label.style.borderColor="rgba(124,92,191,.5)";label.style.background="rgba(124,92,191,.07)";}
-      if(statusEl){statusEl.innerHTML='<div class="status loading"><div class="spinner"></div>Transcribing your recording - takes about 15 seconds...</div>';}
-
-      var reader=new FileReader();
-      reader.onload=async function(e){
-        try{
-          var b64=e.target.result.split(",")[1];
-          var mime=file.type||"audio/m4a";
-          var resp=await fetch("/.netlify/functions/generate",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify({
-              model:"claude-sonnet-4-5",
-              max_tokens:2000,
-              messages:[{
-                role:"user",
-                content:[
-                  {type:"document",source:{type:"base64",media_type:mime,data:b64}},
-                  {type:"text",text:"Transcribe this audio recording exactly as spoken. Return only the transcription text - no preamble, no labels, no quotation marks."}
-                ]
-              }]
-            })
-          });
-          var data=await resp.json();
-          if(data.content&&data.content[0]&&data.content[0].text){
-            var tx=data.content[0].text.trim();
-            var ta=document.getElementById("ans-ta");
-            if(ta){
-              ta.value=tx;
-              S.answers[S.qi]=tx;
-              sv();
-              var wc=document.getElementById("wc");
-              if(wc){wc.textContent=tx.split(" ").length+" words transcribed";}
-            }
-            if(statusEl){statusEl.innerHTML='<div class="status ok">Transcribed - review below then choose a format and generate.</div>';}
-            if(label){label.style.borderColor="rgba(74,138,107,.4)";label.style.background="rgba(74,138,107,.07)";}
-          }else{
-            throw new Error("no transcription");
-          }
-        }catch(err){
-          if(statusEl){statusEl.innerHTML='<div class="status err">Transcription failed - please paste your answer manually in the text box.</div>';}
-          if(label){label.style.borderColor="rgba(220,70,70,.3)";label.style.background="transparent";}
-        }
-      };
-      reader.readAsDataURL(file);
+      if(statusEl){
+        statusEl.innerHTML='<div class="status ok">File selected: '+file.name+'. Now use your transcription app (like Otter.ai) to get the text, then paste it in the box above. Or use the keyboard mic to re-record directly.</div>';
+      }
     }
 
     async function genContent(){
