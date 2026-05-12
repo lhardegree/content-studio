@@ -17,7 +17,7 @@ exports.handler = async function(event) {
     }
 
     const body = JSON.parse(event.body);
-    body.max_tokens = 600;
+    body.max_tokens = 1000;
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
