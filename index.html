@@ -66,7 +66,7 @@
     .body {
         flex: 1;
         overflow-y: auto;
-        padding: 20px 16px 110px;
+        padding: 20px 16px 40px;
     }
 
     .card {
@@ -75,11 +75,6 @@
         border-radius: var(--r);
         padding: 20px;
         margin-bottom: 11px;
-    }
-
-    .card-gold {
-        border-color: var(--gb);
-        background: var(--gdim);
     }
 
     .card-green {
@@ -92,7 +87,7 @@
         font-size: 26px;
         font-weight: 300;
         line-height: 1.3;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
     }
 
     .sub {
@@ -100,7 +95,7 @@
         letter-spacing: .12em;
         text-transform: uppercase;
         color: var(--faint);
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
 
     .lbl {
@@ -108,13 +103,13 @@
         letter-spacing: .12em;
         text-transform: uppercase;
         color: var(--dim);
-        margin-bottom: 8px;
+        margin-bottom: 9px;
         display: block;
     }
 
     .q-text {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 400;
         line-height: 1.55;
         color: var(--text);
@@ -128,24 +123,7 @@
         border-left: 2px solid var(--gb);
         padding-left: 10px;
         margin-bottom: 14px;
-        line-height: 1.6;
-    }
-
-    .ftags {
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
-        margin-bottom: 14px;
-    }
-
-    .ftag {
-        font-size: 9px;
-        letter-spacing: .06em;
-        text-transform: uppercase;
-        border: 1px solid var(--gb);
-        color: rgba(201, 168, 76, .6);
-        border-radius: 3px;
-        padding: 3px 8px;
+        line-height: 1.65;
     }
 
     .btn {
@@ -161,6 +139,7 @@
         width: 100%;
         margin-bottom: 8px;
         display: block;
+        text-align: center;
     }
 
     .btn:hover {
@@ -212,21 +191,10 @@
         opacity: .82;
     }
 
-    .btn-sm-gold {
-        background: var(--gold);
-        color: #1a1025;
-    }
-
     .btn-sm-og {
         background: transparent;
         color: var(--gold);
         border: 1px solid var(--gold);
-    }
-
-    .btn-sm-og2 {
-        background: transparent;
-        color: var(--green);
-        border: 1px solid rgba(74, 138, 107, .5);
     }
 
     .btn-sm-od {
@@ -235,17 +203,31 @@
         border: 1px solid rgba(255, 255, 255, .15);
     }
 
-    .btn-sm-or {
-        background: transparent;
-        color: #dc4646;
-        border: 1px solid rgba(220, 70, 70, .35);
-    }
-
     .btn-row {
         display: flex;
-        gap: 7px;
+        gap: 8px;
         flex-wrap: wrap;
         align-items: center;
+    }
+
+    input[type=text] {
+        width: 100%;
+        background: rgba(0, 0, 0, .35);
+        border: 1px solid rgba(255, 255, 255, .1);
+        border-radius: 8px;
+        padding: 12px 13px;
+        color: var(--text);
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+    }
+
+    input[type=text]::placeholder {
+        color: var(--faint);
+    }
+
+    input[type=text]:focus {
+        outline: none;
+        border-color: var(--gb);
     }
 
     textarea {
@@ -323,16 +305,10 @@
         margin-top: 2px;
     }
 
-    .rad-list {
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-    }
-
-    .rad {
+    .chk1 {
         display: flex;
         align-items: flex-start;
-        gap: 11px;
+        gap: 9px;
         padding: 11px;
         border: 1px solid rgba(255, 255, 255, .07);
         border-radius: 9px;
@@ -340,49 +316,44 @@
         transition: all .2s;
     }
 
-    .rad.on {
+    .chk1.on {
         border-color: var(--gold);
         background: var(--gdim);
     }
 
-    .rad-dot {
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(255, 255, 255, .22);
-        flex-shrink: 0;
-        margin-top: 2px;
+    .pill-grid {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .pill {
+        padding: 8px 13px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, .12);
+        font-size: 11px;
+        color: var(--dim);
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    .pill.on {
+        border-color: var(--gold);
+        background: var(--gdim);
+        color: var(--gold);
+    }
+
+    .cat-row {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .05);
     }
 
-    .rad-inner {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--gold);
-        opacity: 0;
-        transition: opacity .2s;
-    }
-
-    .rad.on .rad-dot {
-        border-color: var(--gold);
-    }
-
-    .rad.on .rad-inner {
-        opacity: 1;
-    }
-
-    .rad-l {
-        font-size: 13px;
-        color: var(--dim);
-    }
-
-    .rad-s {
-        font-size: 10px;
-        color: var(--faint);
-        margin-top: 2px;
+    .cat-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .status {
@@ -429,42 +400,34 @@
         }
     }
 
-    .pips {
-        display: flex;
-        gap: 4px;
-        flex-wrap: wrap;
-        margin-bottom: 14px;
-    }
-
-    .pip {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, .1);
-        flex-shrink: 0;
-    }
-
-    .pip.done {
-        background: var(--green);
-    }
-
-    .pip.cur {
-        background: var(--gold);
-    }
-
     .tip {
         background: rgba(201, 168, 76, .07);
         border: 1px solid var(--gb);
         border-radius: 8px;
-        padding: 11px 13px;
+        padding: 12px 14px;
         font-size: 12px;
         color: var(--dim);
         line-height: 1.65;
-        margin-bottom: 11px;
+        margin-bottom: 12px;
     }
 
     .tip strong {
         color: var(--gold);
+    }
+
+    .info-box {
+        background: rgba(74, 138, 107, .06);
+        border: 1px solid rgba(74, 138, 107, .22);
+        border-radius: 8px;
+        padding: 14px;
+        font-size: 12px;
+        color: rgba(240, 236, 228, .78);
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+
+    .info-box strong {
+        color: var(--green);
     }
 
     .divider {
@@ -473,462 +436,424 @@
         margin: 16px 0;
     }
 
-    .bot-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(14, 11, 20, .96);
-        border-top: 1px solid rgba(255, 255, 255, .07);
-        display: flex;
-        padding: 8px 12px;
-        gap: 8px;
-        backdrop-filter: blur(10px);
-        z-index: 20;
-    }
-
-    .bot-nav .btn {
-        margin-bottom: 0;
-        padding: 11px 10px;
-        font-size: 10px;
-    }
-
-    .cat-badge {
-        display: inline-block;
-        font-size: 9px;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        border-radius: 3px;
-        padding: 3px 9px;
-        margin-bottom: 12px;
-    }
-
     .content-body {
         font-size: 13px;
-        line-height: 1.75;
-        color: rgba(240, 236, 228, .85);
+        line-height: 1.8;
+        color: rgba(240, 236, 228, .88);
         white-space: pre-wrap;
         margin-bottom: 14px;
+    }
+
+    .step-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(201, 168, 76, .15);
+        border: 1px solid var(--gb);
+        color: var(--gold);
+        font-size: 11px;
+        flex-shrink: 0;
+        margin-right: 10px;
+        margin-top: 1px;
+    }
+
+    .step-row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 14px;
+    }
+
+    .step-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .step-text {
+        font-size: 13px;
+        color: var(--dim);
+        line-height: 1.6;
+    }
+
+    .step-text strong {
+        color: var(--text);
     }
     </style>
 </head>
 <body>
 
-    <div id="s-setup" class="scr on">
+    <div id="s-welcome" class="scr on">
         <div class="hdr">
             <div class="logo">Content Studio</div>
+            <button class="btn-sm btn-sm-od" onclick="showSettings()">Settings</button>
         </div>
-        <div class="body" id="setup-body"></div>
+        <div class="body" id="welcome-body"></div>
     </div>
 
-    <div id="s-main" class="scr">
+    <div id="s-settings" class="scr">
+        <div class="hdr">
+            <div class="logo">Settings</div>
+            <button class="btn-sm btn-sm-od" onclick="showWelcome()">&#8592; Back</button>
+        </div>
+        <div class="body" id="settings-body"></div>
+    </div>
+
+    <div id="s-categories" class="scr">
         <div class="hdr">
             <div class="logo">Content Studio</div>
-            <div style="display:flex;gap:8px;align-items:center">
-                <span id="hdr-prog" style="font-size:10px;color:var(--faint)"></span>
-                <button class="btn-sm btn-sm-od" onclick="showSetup()">Settings</button>
-            </div>
+            <button class="btn-sm btn-sm-od" onclick="showWelcome()">&#8962; Home</button>
         </div>
-        <div class="body" id="main-body"></div>
-        <div class="bot-nav">
-            <button class="btn btn-od" id="prev-btn" onclick="prevQ()" style="flex:0 0 auto;width:52px;padding:11px 8px">&#8592;</button>
-            <button class="btn btn-gold" id="next-btn" onclick="nextQ()" style="flex:1">Next Question &#8594;</button>
-            <button class="btn btn-og2" onclick="showSaved()" style="flex:0 0 auto;width:auto;padding:11px 12px" id="saved-btn">Saved</button>
-        </div>
+        <div class="body" id="categories-body"></div>
     </div>
 
-    <div id="s-saved" class="scr">
+    <div id="s-question" class="scr">
         <div class="hdr">
-            <div class="logo">Saved Content</div>
-            <button class="btn-sm btn-sm-od" onclick="goMain()">&#8592; Back</button>
+            <div class="logo">Content Studio</div>
+            <span id="q-prog" style="font-size:10px;color:var(--faint)"></span>
         </div>
-        <div class="body" id="saved-body"></div>
+        <div class="body" id="question-body"></div>
     </div>
 
     <script>
+    var CATS = [
+    {
+        id: "story",
+        name: "My Story",
+        col: "#7C5CBF",
+        desc: "Origin story, journey, philosophy"
+    },
+    {
+        id: "colorstory",
+        name: "My Color Story",
+        col: "#C9884C",
+        desc: "Your personal color experience"
+    },
+    {
+        id: "coloranalysis",
+        name: "Color Analysis",
+        col: "#4A8A6B",
+        desc: "Education, process, results"
+    },
+    {
+        id: "practical",
+        name: "Practical Tips",
+        col: "#5B8FA8",
+        desc: "Shopping, wearing, applying"
+    },
+    {
+        id: "style",
+        name: "Style",
+        col: "#A86B4A",
+        desc: "Style identity, wardrobes, fashion"
+    },
+    {
+        id: "myths",
+        name: "Myth Busters",
+        col: "#B85C5C",
+        desc: "Common misconceptions"
+    },
+    {
+        id: "hottakes",
+        name: "Hot Takes",
+        col: "#C9884C",
+        desc: "Opinions, personality, fun"
+    },
+    {
+        id: "objections",
+        name: "Objections",
+        col: "#5B8FA8",
+        desc: "Responding to hesitations"
+    },
+    {
+        id: "clients",
+        name: "Client Stories",
+        col: "#4A8A6B",
+        desc: "Transformation, emotion, results"
+    }
+    ];
+
     var QS = [
     {
-        cat: "My Story",
-        col: "#7C5CBF",
-        q: "How did you get into this work — what's your origin story?",
-        formats: ["Talking Head", "Long-Form Video", "Blog", "Podcast"],
-        nudge: "Tell the full story — not just the facts. Where were you? What happened? How did it feel?"
+        cat: "story",
+        q: "How did you get into this work \u2014 what's your origin story?",
+        nudge: "Tell the full story \u2014 not just the facts. Where were you? What happened? How did it feel?"
     },
     {
-        cat: "My Story",
-        col: "#7C5CBF",
+        cat: "story",
         q: "What moment made you realize this work was more than just clothing or color?",
-        formats: ["Storytelling Reel", "Podcast", "Long-Form Video"],
-        nudge: "Think of a specific moment or client — tell the whole story."
+        nudge: "Think of a specific moment or client \u2014 tell the whole story, not just the conclusion."
     },
     {
-        cat: "My Story",
-        col: "#7C5CBF",
-        q: "Who is your ideal client and what is she usually feeling when she finds you?",
-        formats: ["Talking Head", "Emotional Carousel", "Short Video"]
+        cat: "story",
+        q: "Who is your ideal client and what is she usually feeling when she finds you?"
     },
     {
-        cat: "My Story",
-        col: "#7C5CBF",
-        q: "What do you wish you'd known at the beginning of your journey in this industry?",
-        formats: ["Talking Head", "Tip Carousel", "Short Video"]
+        cat: "story",
+        q: "What do you wish you'd known at the beginning of your journey in this industry?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
+        cat: "story",
+        q: "What is your personal style philosophy in a sentence or two?"
+    },
+    {
+        cat: "colorstory",
         q: "What is your color season and what was it like when you were first told that result?",
-        formats: ["Personal Reel", "Story Carousel", "Relatable Short"],
-        nudge: "Walk through the moment — where were you, what were you expecting, how did you feel?"
+        nudge: "Walk through the moment \u2014 where were you, what were you expecting, how did you feel?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "Were you surprised by your season, or did it confirm something you already sensed?",
-        formats: ["Short Video", "Text on Screen", "Carousel"]
+        cat: "colorstory",
+        q: "Were you surprised by your season, or did it confirm something you already sensed?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "Was there a color you had to let go of that was hard to accept wasn't serving you?",
-        formats: ["Relatable Reel", "Story Carousel", "Short Video"]
+        cat: "colorstory",
+        q: "Was there a color you had to let go of that was hard to accept wasn't serving you?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "How has knowing your colors changed the way you shop or get dressed day to day?",
-        formats: ["Talking Head", "Tip Video", "Carousel"]
+        cat: "colorstory",
+        q: "How has knowing your colors changed the way you shop or get dressed day to day?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "Be honest — are you loyal to your palette? How often do you wear things outside of it?",
-        formats: ["Candid Short", "Engagement Reel", "Text on Screen"]
+        cat: "colorstory",
+        q: "Be honest \u2014 are you loyal to your palette? How often do you wear things outside of it?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "Do you have palette envy? If you could pick any other season to be, which one and why?",
-        formats: ["Engagement Reel", "Talking Head", "Comment Bait Short"]
+        cat: "colorstory",
+        q: "Do you have palette envy? If you could pick any other season to be, which one and why?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
-        q: "Do you have a color or style hall pass — the color or silhouette you'd cheat on your palette with?",
-        formats: ["Engagement Reel", "Short Video", "Text on Screen"]
+        cat: "colorstory",
+        q: "Do you have a color hall pass \u2014 the one color you'd cheat on your palette with?"
     },
     {
-        cat: "My Color Story",
-        col: "#C9884C",
+        cat: "colorstory",
         q: "Think of a photo of yourself out of your palette. Tell me how it feels to look at it.",
-        formats: ["Personal Reel", "Before-After Content"],
-        nudge: "Describe what you were wearing, when it was, and how you feel now."
+        nudge: "Describe what you were wearing, when it was, and how you feel looking at it now."
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "How would you describe color analysis to someone who has never heard of it?",
-        formats: ["Explainer Short", "FAQ Reel", "Text Carousel"]
+        cat: "coloranalysis",
+        q: "How would you describe color analysis to someone who has never heard of it?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What actually happens during a color analysis session — walk someone through it step by step?",
-        formats: ["Educational Video", "Text Carousel", "Faceless B-Roll"]
+        cat: "coloranalysis",
+        q: "What actually happens during a color analysis session \u2014 walk someone through it step by step?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What are the main dimensions analysts evaluate — temperature, chroma, value, contrast — and why does each matter?",
-        formats: ["Educational Carousel", "Long-Form Video", "Talking Head"]
+        cat: "coloranalysis",
+        q: "What are the main dimensions analysts evaluate \u2014 temperature, chroma, value, contrast \u2014 and why does each matter?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "Why do so many people over-rely on warm versus cool — and what are they missing?",
-        formats: ["Myth-Busting Short", "Text Carousel", "Talking Head"]
+        cat: "coloranalysis",
+        q: "Why do so many people over-rely on warm versus cool \u2014 and what are they missing?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What do you actually look at during a draping session — what changes in someone's face?",
-        formats: ["Educational Reel", "Faceless B-Roll", "Long-Form Video"],
-        nudge: "Get specific and sensory — describe what you actually see. This fascinates people who have never seen a draping."
+        cat: "coloranalysis",
+        q: "What do you actually look at during a draping session \u2014 what changes in someone's face?",
+        nudge: "Get specific and sensory \u2014 describe what you actually see. This fascinates people who have never seen a draping."
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What's the difference between a color technically in your palette and your true wow color?",
-        formats: ["Short Video", "Text Carousel", "Talking Head"]
+        cat: "coloranalysis",
+        q: "What is the difference between a color technically in your palette and your true wow color?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
+        cat: "coloranalysis",
         q: "Why can seeing yourself in the right colors feel emotional or overwhelming?",
-        formats: ["Emotional Reel", "Talking Head", "Story Carousel"],
-        nudge: "Don't rush past this — why does color touch something deeper than just appearance?"
+        nudge: "Don't rush past this \u2014 why does color touch something deeper than just appearance?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What seasons do you see most often in your work? Which do you see least — and why?",
-        formats: ["Engagement Reel", "Short Video", "Text on Screen"]
+        cat: "coloranalysis",
+        q: "What seasons do you see most often in your work? Which do you see least \u2014 and why?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "What is the most mistyped season in your experience, and why do you think that happens?",
-        formats: ["Educational Short", "Talking Head", "Text Carousel"]
+        cat: "coloranalysis",
+        q: "What is the most mistyped season in your experience, and why?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "Can two people have the same season but look completely different in the same colors — and why?",
-        formats: ["Educational Short", "Talking Head", "FAQ Reel"]
+        cat: "coloranalysis",
+        q: "Can two people have the same season but look completely different in the same colors \u2014 and why?"
     },
     {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
-        q: "Why do some people get completely different results from different analysts — how does that happen?",
-        formats: ["Talking Head", "Educational Short", "FAQ Reel"]
-    },
-    {
-        cat: "Color Analysis",
-        col: "#4A8A6B",
+        cat: "coloranalysis",
         q: "Why do so many women say they feel like themselves again after having their colors done?",
-        formats: ["Emotional Carousel", "Talking Head", "Long-Form Video"],
         nudge: "This is a thought-leadership answer. Take your time with it."
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "What is the very first thing you recommend someone do after they receive their color palette?",
-        formats: ["Tip Video", "Text Carousel", "Short Video"]
+        cat: "coloranalysis",
+        q: "How is professional draping different from what you see in an online quiz or phone filter?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "What are the most common mistakes people make after getting their colors done?",
-        formats: ["Tip Carousel", "Talking Head", "Short Video"]
+        cat: "practical",
+        q: "What is the very first thing you recommend someone do after they receive their color palette?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "How do you wear black if black isn't your best color but you still love it?",
-        formats: ["Tip Video", "Text on Screen", "Short Reel"]
+        cat: "practical",
+        q: "What are the most common mistakes people make after getting their colors done?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "What if all of your jewelry is the wrong metal — do you have to replace everything?",
-        formats: ["FAQ Short", "Text on Screen", "Tip Video"]
+        cat: "practical",
+        q: "How do you wear black if black isn't your best color but you still love it?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "How do you actually use your color fan or swatch book when you're out shopping?",
-        formats: ["Tip Video", "Faceless B-Roll", "Short Video"]
+        cat: "practical",
+        q: "What if all of your jewelry is the wrong metal \u2014 do you have to replace everything?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "How do you handle neutrals — can you wear black, white, or grey if they're not in your palette?",
-        formats: ["FAQ Reel", "Text on Screen", "Short Video"]
+        cat: "practical",
+        q: "How do you actually use your color fan or swatch book when you're out shopping?"
     },
     {
-        cat: "Practical",
-        col: "#5B8FA8",
-        q: "What's one small thing someone could do today to start dressing more intentionally, even before getting analyzed?",
-        formats: ["Short Tip Video", "Text on Screen", "Story"]
+        cat: "practical",
+        q: "How do you handle neutrals \u2014 can you wear black, white, or grey if they're not in your palette?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "What is style analysis and how is it different from someone just picking clothes for you?",
-        formats: ["Explainer Short", "FAQ Reel", "Text Carousel"]
+        cat: "practical",
+        q: "What should someone look for when shopping to make sure a color is actually the right version for them?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "What is body architecture in styling — and why is it not about hiding or fixing anything?",
-        formats: ["Educational Short", "Talking Head", "Text Carousel"]
+        cat: "practical",
+        q: "What's one small thing someone could do today to start dressing more intentionally, even before getting analyzed?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "What's the difference between fashion and personal style — and why does that distinction matter?",
-        formats: ["Thought Leadership Reel", "Talking Head", "Text Carousel"]
+        cat: "style",
+        q: "What is style analysis and how is it different from someone just picking clothes for you?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
+        cat: "style",
+        q: "What is body architecture in styling \u2014 and why is it not about hiding or fixing anything?"
+    },
+    {
+        cat: "style",
+        q: "What's the difference between fashion and personal style \u2014 and why does that distinction matter?"
+    },
+    {
+        cat: "style",
         q: "Why do some outfits technically work on paper but still feel completely wrong when you put them on?",
-        formats: ["Relatable Short", "Talking Head", "Text on Screen"],
         nudge: "Speak to that feeling before you explain it."
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
+        cat: "style",
         q: "Why do so many women feel disconnected from their wardrobes even when their closet is full?",
-        formats: ["Emotional Carousel", "Talking Head", "Long-Form Video"],
         nudge: "Go deeper than the obvious. This is thought-leadership territory."
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
+        cat: "style",
         q: "What if your lifestyle has completely changed but your style hasn't caught up yet?",
-        formats: ["Relatable Reel", "Talking Head", "Story Carousel"],
-        nudge: "Speak to the women living real transitions — new job, kids leaving, divorce, retirement."
+        nudge: "Speak to the women living real transitions \u2014 new job, kids leaving, divorce, retirement."
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "Why does the same outfit look effortlessly chic on one person and costume-y on another?",
-        formats: ["Educational Short", "Engagement Reel", "Talking Head"]
+        cat: "style",
+        q: "Why does the same outfit look effortlessly chic on one person and costume-y on another?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "How do you build a wardrobe that feels coherent instead of just full?",
-        formats: ["Tip Carousel", "Long-Form Video", "Educational Short"]
+        cat: "style",
+        q: "How do you build a wardrobe that feels coherent instead of just full?"
     },
     {
-        cat: "Style",
-        col: "#A86B4A",
-        q: "Pick a style archetype — what pieces does she absolutely need in her closet right now?",
-        formats: ["Shopping Carousel", "Short Video", "Educational Reel"],
-        nudge: "Pick the one you find most fun to talk about. Be specific — what silhouettes, fabrics, key pieces?"
+        cat: "style",
+        q: "Pick a style archetype \u2014 what pieces does she absolutely need in her closet right now?",
+        nudge: "Pick the one you find most fun to talk about. Be specific \u2014 what silhouettes, fabrics, key pieces?"
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: Color analysis will tell me I can never wear black. True or false — and explain.",
-        formats: ["Myth-Busting Reel", "Text on Screen", "Short Video"]
+        cat: "myths",
+        q: "Myth: Color analysis will tell me I can never wear black. True or false \u2014 and explain."
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: I can figure out my season from an online quiz or phone app. What's wrong with that?",
-        formats: ["Myth-Busting Reel", "Text on Screen", "Short Video"]
+        cat: "myths",
+        q: "Myth: I can figure out my season from an online quiz or phone app. What's wrong with that?"
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: Your season changes when your hair color changes. True or false?",
-        formats: ["Myth-Busting Reel", "FAQ Short"]
+        cat: "myths",
+        q: "Myth: Your season changes when your hair color changes. True or false?"
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: The vein test is a reliable way to determine your season. Is it?",
-        formats: ["Myth-Busting Reel", "Educational Short"]
+        cat: "myths",
+        q: "Myth: The vein test is a reliable way to determine your season. Is it?"
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
+        cat: "myths",
         q: "Myth: I need to lose weight or wait until I look different before I do this.",
-        formats: ["Myth-Busting Reel", "Emotional Short"],
         nudge: "This deserves a real answer. Speak to the woman who believes this."
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: Warm means earth tones and cool means jewel tones.",
-        formats: ["Myth-Busting Reel", "Educational Short", "Text on Screen"]
+        cat: "myths",
+        q: "Myth: Warm means earth tones and cool means jewel tones."
     },
     {
-        cat: "Myth Busters",
-        col: "#B85C5C",
-        q: "Myth: Color analysis is only for people who are really into fashion.",
-        formats: ["Myth-Busting Reel", "Relatable Short", "Text on Screen"]
+        cat: "myths",
+        q: "Myth: Color analysis is only for people who are really into fashion."
     },
     {
-        cat: "Hot Takes",
-        col: "#C9884C",
-        q: "What is one color or style hill you will absolutely die on — a strongly held opinion you won't back down from?",
-        formats: ["Engagement Reel", "Talking Head", "Comment Bait Short"],
+        cat: "myths",
+        q: "Myth: You have to spend a lot of money to dress well in your colors."
+    },
+    {
+        cat: "hottakes",
+        q: "What is one color or style hill you will absolutely die on \u2014 a strongly held opinion you won't back down from?",
         nudge: "Be bold. A genuine specific opinion makes the best content."
     },
     {
-        cat: "Hot Takes",
-        col: "#C9884C",
-        q: "What is one color or style unpopular opinion you hold that people might push back on?",
-        formats: ["Engagement Reel", "Text on Screen", "Talking Head"]
+        cat: "hottakes",
+        q: "What is one color or style unpopular opinion you hold that people might push back on?"
     },
     {
-        cat: "Hot Takes",
-        col: "#C9884C",
-        q: "If you could only wear one color every single day for the next year, what would it be and why?",
-        formats: ["Fun Engagement Short", "Text on Screen", "Story"]
+        cat: "hottakes",
+        q: "If you could only wear one color every single day for the next year, what would it be and why?"
     },
     {
-        cat: "Objections",
-        col: "#5B8FA8",
+        cat: "hottakes",
+        q: "Do you have a color or style hall pass \u2014 the one you'd cheat on your palette or style identity with?"
+    },
+    {
+        cat: "objections",
         q: "What would you say to someone who says: I don't want my colors done because I don't want to be limited?",
-        formats: ["Short Video", "Text on Screen", "Talking Head"],
-        nudge: "Speak directly to her — not at her. She's probably watching."
+        nudge: "Speak directly to her \u2014 not at her. She's probably watching."
     },
     {
-        cat: "Objections",
-        col: "#5B8FA8",
-        q: "What would you say to someone who says: I don't want a style analysis because I don't want to be told what I can't wear?",
-        formats: ["Short Video", "Text on Screen", "Talking Head"]
+        cat: "objections",
+        q: "What would you say to someone who says: I don't want a style analysis because I don't want to be told what I can't wear?"
     },
     {
-        cat: "Objections",
-        col: "#5B8FA8",
-        q: "What would you say to someone who says: I can just upload my photos to ChatGPT and have it analyze me?",
-        formats: ["Educational Short", "Talking Head", "Text on Screen"]
+        cat: "objections",
+        q: "What would you say to someone who says: I can just upload my photos to ChatGPT and have it analyze me?"
     },
     {
-        cat: "Objections",
-        col: "#5B8FA8",
+        cat: "objections",
         q: "How do you respond to the objection: it's too expensive?",
-        formats: ["Talking Head", "Short Video", "Text on Screen"],
-        nudge: "Don't just address the money — address what's underneath it."
+        nudge: "Don't just address the money \u2014 address what's underneath it."
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "Tell me about a client experience that really moved you — what happened and why did it stick with you?",
-        formats: ["Storytelling Reel", "Long-Form Video", "Podcast", "Emotional Carousel"],
+        cat: "objections",
+        q: "What if someone doesn't like their colors once they have them done?"
+    },
+    {
+        cat: "clients",
+        q: "Tell me about a client experience that really moved you \u2014 what happened and why did it stick with you?",
         nudge: "Tell the whole story. Don't rush. Where were you? What happened? What did she say? This is your best content."
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "What is the most common reaction clients have when they see themselves in their colors for the first time?",
-        formats: ["Emotional Short", "Talking Head", "Story Carousel"]
+        cat: "clients",
+        q: "What is the most common reaction clients have when they see themselves in their colors for the first time?"
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "Have you ever had a client who was resistant or skeptical — and what happened?",
-        formats: ["Storytelling Reel", "Talking Head", "Podcast"],
-        nudge: "Tell the story — the resistance, what happened during the session, and what shifted."
+        cat: "clients",
+        q: "Have you ever had a client who was resistant or skeptical \u2014 and what happened?",
+        nudge: "Tell the story \u2014 the resistance, what happened during the session, and what shifted."
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "What does it look like when a client truly steps into her style identity — what changes beyond just her wardrobe?",
-        formats: ["Emotional Carousel", "Long-Form Video", "Talking Head"]
+        cat: "clients",
+        q: "What does it look like when a client truly steps into her style identity \u2014 what changes beyond just her wardrobe?"
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "How do you handle the moment when a client gets emotional — and what does that tell you about what this work really is?",
-        formats: ["Emotional Reel", "Talking Head", "Thought Leadership Short"]
+        cat: "clients",
+        q: "How do you handle the moment when a client gets emotional \u2014 and what does that tell you about what this work really is?"
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "What color have most clients assumed they could never wear — and what happened when they tried it?",
-        formats: ["Short Video", "Engagement Reel", "Text on Screen"]
+        cat: "clients",
+        q: "What color have most clients assumed they could never wear \u2014 and what happened when they tried it?"
     },
     {
-        cat: "Client Stories",
-        col: "#4A8A6B",
-        q: "What are the reasons clients tell you made them finally decide to get a color analysis?",
-        formats: ["Carousel", "Talking Head", "Relatable Short"]
+        cat: "clients",
+        q: "What are the reasons clients tell you made them finally decide to get a color analysis?"
     }
     ];
 
@@ -936,7 +861,7 @@
     {
         id: "shortform",
         l: "Short-Form Video",
-        s: "TikTok, Reels, Shorts"
+        s: "TikTok / Reels / Shorts"
     },
     {
         id: "longform",
@@ -946,7 +871,7 @@
     {
         id: "carousel",
         l: "Photo / Carousel",
-        s: "With caption"
+        s: "Instagram / Facebook"
     },
     {
         id: "blog",
@@ -955,367 +880,368 @@
     },
     {
         id: "podcast",
-        l: "Podcast Episode",
-        s: "Audio or video"
+        l: "Podcast / Audio",
+        s: "Episode or clip"
     }
     ];
 
-    var VOCS = [
+    var VOICES = [
     {
         id: "authoritative",
-        l: "Authoritative",
-        s: "Expert-led, trust-building"
+        l: "Authoritative"
     },
     {
-        id: "friendly",
-        l: "Conversational",
-        s: "Warm, approachable"
+        id: "conversational",
+        l: "Conversational"
     },
     {
-        id: "entertaining",
-        l: "Humorous",
-        s: "Fun, personality-forward"
+        id: "humorous",
+        l: "Humorous"
     },
     {
         id: "inspirational",
-        l: "Inspirational",
-        s: "Uplifting, transformational"
+        l: "Inspirational"
     },
     {
-        id: "luxury",
-        l: "Aspirational",
-        s: "Elevated, sophisticated"
+        id: "aspirational",
+        l: "Aspirational"
     }
     ];
 
-    var SK = "csa_v5";
+    var CTYPES = [
+    {
+        id: "edu_cta",
+        l: "Educational + Booking CTA",
+        s: "Teach something valuable, invite them to book"
+    },
+    {
+        id: "edu_no_cta",
+        l: "Educational / Authority",
+        s: "Build trust and expertise, no direct pitch"
+    },
+    {
+        id: "engagement",
+        l: "Engagement Driver",
+        s: "Spark comments, saves, shares, questions"
+    },
+    {
+        id: "entertainment",
+        l: "Entertainment / Personality",
+        s: "Fun, relatable, shows who you are"
+    },
+    {
+        id: "awareness",
+        l: "Brand Awareness",
+        s: "Introduce your work to new audiences"
+    },
+    {
+        id: "transformation",
+        l: "Transformation Story",
+        s: "Before and after, client results, emotional impact"
+    },
+    {
+        id: "mythbusting",
+        l: "Myth Busting",
+        s: "Correct misconceptions, build authority"
+    }
+    ];
+
+    var SK = "csa_v6";
     var S = {
-        setup: {
-            formats: [],
-            voice: "",
-            done: false
+        biz: {
+            name: "",
+            location: "",
+            virtual: false
         },
-        qi: 0,
-        content: {},
-        answers: {},
-        selFmt: {},
-        selVoice: {}
+        catId: null,
+        qIdx: 0,
+        fmt: "",
+        voice: "",
+        ctype: "",
+        answer: ""
     };
 
     function sv() {
         try {
-            localStorage.setItem(SK, JSON.stringify(S));
+            localStorage.setItem(SK, JSON.stringify({
+                biz: S.biz
+            }));
         } catch (e) {}
     }
     function ld() {
         try {
             var d = JSON.parse(localStorage.getItem(SK) || "null");
-            if (d) {
-                S.setup = d.setup || S.setup;
-                S.qi = d.qi || 0;
-                S.content = d.content || {};
-                S.answers = d.answers || {};
-                S.selFmt = d.selFmt || {};
-                S.selVoice = d.selVoice || {};
-            }
+            if (d && d.biz)
+                S.biz = d.biz;
         } catch (e) {}
     }
     ld();
 
-    function showSetup() {
+    function show(id) {
         document.querySelectorAll(".scr").forEach(function(s) {
             s.classList.remove("on");
         });
-        document.getElementById("s-setup").classList.add("on");
-        rSetup();
+        document.getElementById(id).classList.add("on");
     }
-    function goMain() {
-        document.querySelectorAll(".scr").forEach(function(s) {
-            s.classList.remove("on");
-        });
-        document.getElementById("s-main").classList.add("on");
-        rMain();
+    function showWelcome() {
+        show("s-welcome");
+        rWelcome();
     }
-    function showSaved() {
-        document.querySelectorAll(".scr").forEach(function(s) {
-            s.classList.remove("on");
-        });
-        document.getElementById("s-saved").classList.add("on");
-        rSaved();
+    function showSettings() {
+        show("s-settings");
+        rSettings();
     }
-    function prevQ() {
-        if (S.qi > 0) {
-            S.qi--;
-            sv();
-            rMain();
-        }
+    function showCategories() {
+        show("s-categories");
+        rCategories();
     }
-    function nextQ() {
-        if (S.qi < QS.length - 1) {
-            S.qi++;
-            sv();
-            rMain();
-        } else {
-            showSaved();
-        }
+    function showQuestion() {
+        show("s-question");
+        rQuestion();
     }
-    function fmtL(id) {
-        var f = FMTS.find(function(x) {
-            return x.id === id;
-        });
-        return f ? f.l : id;
+
+    function rWelcome() {
+        var bizLine = S.biz.name
+        ? '<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--faint)">' + esc(S.biz.name) + (S.biz.location ? ' &middot; ' + esc(S.biz.location) : '') + (S.biz.virtual ? ' &middot; Virtual available' : '') + '</div>'
+        : '<div style="text-align:center;margin-top:10px"><button class="btn-sm btn-sm-od" onclick="showSettings()">Add business info for booking CTAs</button></div>';
+        document.getElementById("welcome-body").innerHTML =
+        '<div style="margin-bottom:24px"><div class="display">Content Studio</div><div class="sub">True Style Atelier</div><p style="font-size:14px;color:var(--dim);line-height:1.75">Your expertise is already inside you. This tool helps you capture it \u2014 one question at a time \u2014 and turn it into ready-to-use content.</p></div>'
+        + '<div class="card" style="margin-bottom:20px"><span class="lbl">How it works</span>'
+        + '<div class="step-row"><span class="step-badge">1</span><div class="step-text"><strong>Choose a category</strong> \u2014 pick a topic you feel like talking about today.</div></div>'
+        + '<div class="step-row"><span class="step-badge">2</span><div class="step-text"><strong>See a question</strong> \u2014 read it, then speak or type your answer.</div></div>'
+        + '<div class="step-row"><span class="step-badge">3</span><div class="step-text"><strong>Choose format, voice, and goal</strong> \u2014 decide what kind of content you want from this answer.</div></div>'
+        + '<div class="step-row"><span class="step-badge">4</span><div class="step-text"><strong>Generate and copy</strong> \u2014 paste it into a doc, then keep going or try another format from the same answer.</div></div>'
+        + '</div>'
+        + '<button class="btn btn-gold" onclick="showCategories()">Choose a Category \u2192</button>'
+        + bizLine;
     }
-    function vocL(id) {
-        var v = VOCS.find(function(x) {
-            return x.id === id;
-        });
-        return v ? v.l : id;
+
+    function rSettings() {
+        document.getElementById("settings-body").innerHTML =
+        '<div style="margin-bottom:18px"><div class="display" style="font-size:22px">Business Info</div><p style="font-size:13px;color:var(--faint);line-height:1.65;margin-top:6px">Optional \u2014 fill this in if you want booking CTAs in your content. Leave blank if the goal of the piece is not about booking.</p></div>'
+        + '<div class="card"><span class="lbl">Business name</span><input type="text" id="inp-name" placeholder="e.g. True Style Atelier" value="' + esc(S.biz.name) + '" style="margin-bottom:12px"><span class="lbl">Location <span style="color:var(--faint);font-size:9px">(city, state \u2014 for in-person services)</span></span><input type="text" id="inp-loc" placeholder="e.g. Atlanta, GA" value="' + esc(S.biz.location) + '"></div>'
+        + '<div class="card"><span class="lbl">Service delivery</span><div class="chk1' + (S.biz.virtual ? ' on' : '') + '" id="vchk" onclick="togV()"><div class="chk-box" id="vbox">' + (S.biz.virtual ? '&#10003;' : '') + '</div><div><div class="chk-l">Virtual services available</div><div class="chk-s">I also work with clients outside my local area</div></div></div></div>'
+        + '<button class="btn btn-gold" onclick="saveSettings()">Save \u2713</button><button class="btn btn-od" onclick="showWelcome()">Cancel</button>';
     }
-    function tFmt(id) {
-        var f = S.setup.formats;
-        S.setup.formats = f.indexOf(id) > -1 ? f.filter(function(x) {
-            return x !== id;
-        }) : [].concat(f, [id]);
-        chkDone();
+
+    function togV() {
+        S.biz.virtual = !S.biz.virtual;
+        var b = document.getElementById("vbox");
+        var c = document.getElementById("vchk");
+        if (b)
+            b.innerHTML = S.biz.virtual ? '&#10003;' : '';
+        if (c)
+            c.className = 'chk1' + (S.biz.virtual ? ' on' : '');
+    }
+
+    function saveSettings() {
+        var n = document.getElementById("inp-name");
+        var l = document.getElementById("inp-loc");
+        S.biz.name = n ? n.value.trim() : '';
+        S.biz.location = l ? l.value.trim() : '';
         sv();
-        rSetup();
-    }
-    function chkDone() {
-        S.setup.done = S.setup.formats.length > 0 && !!S.setup.voice;
+        showWelcome();
     }
 
-    function rSetup() {
-        var s = S.setup;
-        chkDone();
-        var fmtHtml = FMTS.map(function(f) {
-            var on = s.formats.indexOf(f.id) > -1;
-            return '<div class="chk' + (on ? ' on' : '') + '" onclick="tFmt(\'' + f.id + '\')">'
-            + '<div class="chk-box">' + (on ? '&#10003;' : '') + '</div>'
-            + '<div><div class="chk-l">' + f.l + '</div><div class="chk-s">' + f.s + '</div></div>'
-            + '</div>';
-        }).join('');
-        var vocHtml = VOCS.map(function(v) {
-            var on = s.voice === v.id;
-            return '<div class="rad' + (on ? ' on' : '') + '" onclick="S.setup.voice=\'' + v.id + '\';chkDone();sv();rSetup()">'
-            + '<div class="rad-dot"><div class="rad-inner"></div></div>'
-            + '<div><div class="rad-l">' + v.l + '</div><div class="rad-s">' + v.s + '</div></div>'
-            + '</div>';
-        }).join('');
-        document.getElementById("setup-body").innerHTML =
-        '<div style="margin-bottom:22px">'
-        + '<div class="display">Welcome</div>'
-        + '<div class="sub">Two quick questions — then start</div>'
-        + '<p style="font-size:13px;color:var(--faint);line-height:1.7">Tell Claude how to format your content and how to write it. Saves to your browser — only do this once.</p>'
-        + '</div>'
-        + '<div class="card">'
-        + '<span class="lbl">What content do you create? <span style="color:var(--gold);font-size:9px">select all that apply</span></span>'
-        + '<div class="chk-grid">' + fmtHtml + '</div>'
-        + '</div>'
-        + '<div class="card">'
-        + '<span class="lbl">Your brand voice <span style="color:var(--gold);font-size:9px">choose one</span></span>'
-        + '<div class="rad-list">' + vocHtml + '</div>'
-        + '</div>'
-        + '<div style="padding-bottom:20px">'
-        + (s.done
-        ? '<button class="btn btn-gold" onclick="goMain()">Start Recording Content &#8594;</button>'
-        : '<p style="text-align:center;font-size:12px;color:var(--faint);padding:12px 0">Select your content formats and brand voice above to continue.</p>'
-        )
-        + '</div>';
+    function rCategories() {
+        var html = '<div style="margin-bottom:18px"><div class="display" style="font-size:22px">Choose a Category</div><p style="font-size:13px;color:var(--faint);line-height:1.65;margin-top:6px">Pick what you feel like talking about today. You can always come back and do another category.</p></div><div class="card">';
+        CATS.forEach(function(cat) {
+            var count = QS.filter(function(q) {
+                return q.cat === cat.id;
+            }).length;
+            html += '<div class="cat-row"><div><div style="font-size:13px;color:var(--text)">' + cat.name + '</div><div style="font-size:10px;color:' + cat.col + ';margin-top:2px">' + count + ' questions \u00b7 ' + cat.desc + '</div></div><button class="btn-sm btn-sm-og" onclick="startCat(\'' + cat.id + '\')">Start \u2192</button></div>';
+        });
+        html += '</div>';
+        document.getElementById("categories-body").innerHTML = html;
     }
 
-    function rMain() {
-        var q = QS[S.qi];
-        var doneCount = Object.keys(S.content).length;
-        document.getElementById("hdr-prog").textContent = doneCount + "/" + QS.length;
-        document.getElementById("saved-btn").textContent = "Saved (" + doneCount + ")";
-        document.getElementById("prev-btn").style.opacity = S.qi === 0 ? "0.3" : "1";
-        document.getElementById("next-btn").textContent = S.qi === QS.length - 1 ? "See All Saved &#8594;" : "Next Question &#8594;";
+    function startCat(catId) {
+        S.catId = catId;
+        S.qIdx = 0;
+        S.fmt = "";
+        S.voice = "";
+        S.ctype = "";
+        S.answer = "";
+        showQuestion();
+    }
 
-        var fmt = S.selFmt[S.qi] || "";
-        var voice = S.selVoice[S.qi] || S.setup.voice || "";
-        var ans = S.answers[S.qi] || "";
-        var wc = ans.trim() ? ans.trim().split(/\s+/).length + " words" : "";
+    function getCatQs() {
+        return QS.filter(function(q) {
+            return q.cat === S.catId;
+        });
+    }
 
-        var pipHtml = QS.map(function(_, i) {
-            return '<div class="pip' + (S.content[i] ? ' done' : i === S.qi ? ' cur' : '') + '"></div>';
-        }).join('');
-
-        var fmtHtml = FMTS.map(function(f) {
-            var on = fmt === f.id;
-            return '<div class="chk' + (on ? ' on' : '') + '" onclick="S.selFmt[S.qi]=\'' + f.id + '\';sv();rMain()">'
-            + '<div class="chk-box">' + (on ? '&#10003;' : '') + '</div>'
-            + '<div><div class="chk-l">' + f.l + '</div><div class="chk-s">' + f.s + '</div></div>'
-            + '</div>';
-        }).join('');
-
-        var vocHtml = VOCS.map(function(v) {
-            var on = voice === v.id;
-            return '<div onclick="S.selVoice[S.qi]=\'' + v.id + '\';sv();rMain()" '
-            + 'style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:11px;border:1px solid '
-            + (on ? 'var(--gold)' : 'rgba(255,255,255,.1)')
-            + ';background:' + (on ? 'var(--gdim)' : 'transparent')
-            + ';color:' + (on ? 'var(--gold)' : 'var(--dim)') + '">' + v.l + '</div>';
-        }).join('');
-
-        var existingContent = S.content[S.qi] || "";
-        var contentHtml = "";
-        if (existingContent) {
-            contentHtml = '<div class="divider"></div>'
-            + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">'
-            + '<span class="lbl" style="margin-bottom:0;color:var(--green)">Generated Content</span>'
-            + '<button class="btn-sm btn-sm-og" id="copy-all-btn" onclick="doCopy(\'copy-all-btn\')">Copy All</button>'
-            + '</div>'
-            + '<div class="card card-green">'
-            + '<div class="content-body" id="content-text">' + escHtml(existingContent) + '</div>'
-            + '<button class="btn btn-og2" style="margin-bottom:0" onclick="doCopy(\'copy-main-btn\')" id="copy-main-btn">&#128203; Copy This Content</button>'
-            + '</div>';
+    function rQuestion() {
+        var qs = getCatQs();
+        var q = qs[S.qIdx];
+        var cat = CATS.find(function(c) {
+            return c.id === S.catId;
+        });
+        if (!q || !cat) {
+            showCategories();
+            return;
         }
+        var prog = document.getElementById("q-prog");
+        if (prog)
+            prog.textContent = (S.qIdx + 1) + "/" + qs.length;
 
-        document.getElementById("main-body").innerHTML =
-        '<div class="pips">' + pipHtml + '</div>'
-        + '<div class="card">'
-        + '<span class="cat-badge" style="background:' + q.col + '22;color:' + q.col + ';border:1px solid ' + q.col + '44">' + q.cat + '</span>'
-        + '<div class="ftags">' + (q.formats || []).map(function(f) {
-            return '<span class="ftag">' + f + '</span>';
-        }).join('') + '</div>'
+        var fmtHtml = FMTS.map(function(f) {
+            var on = S.fmt === f.id;
+            return '<div class="chk' + (on ? ' on' : '') + '" onclick="selF(\'' + f.id + '\')"><div class="chk-box">' + (on ? '&#10003;' : '') + '</div><div><div class="chk-l">' + f.l + '</div><div class="chk-s">' + f.s + '</div></div></div>';
+        }).join('');
+        var voiceHtml = VOICES.map(function(v) {
+            var on = S.voice === v.id;
+            return '<div class="pill' + (on ? ' on' : '') + '" onclick="selV(\'' + v.id + '\')">' + v.l + '</div>';
+        }).join('');
+        var ctHtml = CTYPES.map(function(ct) {
+            var on = S.ctype === ct.id;
+            return '<div class="chk1' + (on ? ' on' : '') + '" onclick="selC(\'' + ct.id + '\')"><div class="chk-box">' + (on ? '&#10003;' : '') + '</div><div><div class="chk-l">' + ct.l + '</div><div class="chk-s">' + ct.s + '</div></div></div>';
+        }).join('');
+        var canGen = !!(S.fmt && S.voice && S.ctype);
+        var wc = S.answer.trim() ? S.answer.trim().split(/\s+/).length + ' words' : '';
+
+        document.getElementById("question-body").innerHTML =
+        '<div class="card" style="border-color:' + cat.col + '44;background:' + cat.col + '0d;margin-bottom:14px">'
+        + '<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:' + cat.col + ';margin-bottom:10px">' + cat.name + '</div>'
         + '<div class="q-text">' + q.q + '</div>'
         + (q.nudge ? '<div class="nudge">&#128172; ' + q.nudge + '</div>' : '')
         + '</div>'
-        + '<div class="tip"><strong>How to answer:</strong> Tap the text box, then use the <strong>mic key on your keyboard</strong> to speak. Or just type. Then choose a format and tap Generate.</div>'
-        + '<textarea id="ans-ta" placeholder="Tap here — use keyboard mic to speak, or type your answer…" style="min-height:130px;margin-bottom:8px">' + escHtml(ans) + '</textarea>'
-        + '<div style="font-size:10px;color:var(--faint);margin-bottom:16px" id="wc">' + wc + '</div>'
-        + '<div class="card" style="margin-bottom:11px">'
-        + '<span class="lbl" style="margin-bottom:12px;display:block">What type of content? <span style="color:var(--gold);font-size:9px">choose one</span></span>'
-        + '<div class="chk-grid">' + fmtHtml + '</div>'
-        + '</div>'
-        + '<div class="card" style="margin-bottom:11px">'
-        + '<span class="lbl" style="margin-bottom:12px;display:block">Voice <span style="color:var(--faint);font-size:9px">optional — defaults to your setup choice</span></span>'
-        + '<div style="display:flex;gap:6px;flex-wrap:wrap">' + vocHtml + '</div>'
-        + '</div>'
+        + '<div class="tip"><strong>To answer:</strong> Tap the box below, then use the <strong>mic key on your keyboard</strong> to speak. Or just type. The more detail, the better the content.</div>'
+        + '<textarea id="ans-ta" placeholder="Tap here \u2014 use keyboard mic to speak, or type your answer\u2026" style="min-height:140px;margin-bottom:6px">' + esc(S.answer) + '</textarea>'
+        + '<div id="wc" style="font-size:10px;color:var(--faint);margin-bottom:16px">' + wc + '</div>'
+        + '<div class="card" style="margin-bottom:11px"><span class="lbl">Content format <span style="color:var(--gold);font-size:9px">choose one</span></span><div class="chk-grid">' + fmtHtml + '</div></div>'
+        + '<div class="card" style="margin-bottom:11px"><span class="lbl">Voice / tone <span style="color:var(--gold);font-size:9px">choose one</span></span><div class="pill-grid">' + voiceHtml + '</div></div>'
+        + '<div class="card" style="margin-bottom:11px"><span class="lbl">Content goal <span style="color:var(--gold);font-size:9px">choose one</span></span><p style="font-size:11px;color:var(--faint);margin-bottom:10px">If you want a booking CTA, add your business info under Settings first.</p><div style="display:flex;flex-direction:column;gap:7px">' + ctHtml + '</div></div>'
         + '<div id="gen-status"></div>'
-        + '<button class="btn btn-gold" id="gen-btn" onclick="genContent()" ' + (fmt ? '' : 'style="opacity:0.5"') + '>'
-        + (fmt ? '&#10022; Generate ' + fmtL(fmt) : '&#10022; Choose a format above first')
-        + '</button>'
-        + contentHtml;
+        + '<button class="btn btn-gold" id="gen-btn" onclick="genContent()" ' + (canGen ? '' : 'disabled style="opacity:0.45"') + '>' + (canGen ? '&#10022; Generate Content' : '&#10022; Choose format, voice, and goal above') + '</button>'
+        + '<div id="gen-output"></div>'
+        + '<div class="divider"></div>'
+        + '<div class="btn-row" style="justify-content:space-between;margin-bottom:8px">'
+        + '<button class="btn-sm btn-sm-od" onclick="goBack()">&#8592; Back</button>'
+        + '<button class="btn-sm btn-sm-od" onclick="skipQ()">Skip &#8594;</button>'
+        + '</div>'
+        + '<button class="btn btn-od" onclick="showCategories()">&#8962; Change Category</button>';
 
         var ta = document.getElementById("ans-ta");
         if (ta) {
             ta.addEventListener("input", function() {
-                S.answers[S.qi] = ta.value;
-                sv();
+                S.answer = ta.value;
                 var wcel = document.getElementById("wc");
                 if (wcel)
-                    wcel.textContent = ta.value.trim() ? ta.value.trim().split(/\s+/).length + " words" : "";
+                    wcel.textContent = ta.value.trim() ? ta.value.trim().split(/\s+/).length + ' words' : '';
             });
         }
     }
 
-    function escHtml(s) {
-        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    function selF(id) {
+        S.fmt = id;
+        rQuestion();
+    }
+    function selV(id) {
+        S.voice = id;
+        rQuestion();
+    }
+    function selC(id) {
+        S.ctype = id;
+        rQuestion();
     }
 
-    function doCopy(btnId) {
-        var el = document.getElementById("content-text");
-        var text = el ? el.innerText || el.textContent : "";
-        if (!text) {
-            return;
+    function goBack() {
+        if (S.qIdx > 0) {
+            S.qIdx--;
+            S.answer = "";
+            rQuestion();
         }
-        function finish(ok) {
-            var btn = document.getElementById(btnId);
-            if (btn) {
-                var o = btn.textContent || btn.innerHTML;
-                btn.textContent = ok ? "✓ Copied!" : "Copy failed";
-                setTimeout(function() {
-                    btn.textContent = o;
-                }, 2500);
-            }
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(function() {
-                finish(true);
-            }).catch(function() {
-                fallbackCopy(text, btnId);
-            });
-        } else {
-            fallbackCopy(text, btnId);
+        else {
+            showCategories();
         }
     }
-    function fallbackCopy(text, btnId) {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        var ok = false;
-        try {
-            ok = document.execCommand("copy");
-        } catch (e) {}
-        document.body.removeChild(ta);
-        var btn = document.getElementById(btnId);
-        if (btn) {
-            var o = btn.textContent || btn.innerHTML;
-            btn.textContent = ok ? "✓ Copied!" : "Copy failed";
-            setTimeout(function() {
-                btn.textContent = o;
-            }, 2500);
+    function skipQ() {
+        var qs = getCatQs();
+        if (S.qIdx < qs.length - 1) {
+            S.qIdx++;
+            S.answer = "";
+            rQuestion();
+            window.scrollTo(0, 0);
+        }
+        else {
+            showCategories();
+        }
+    }
+    function nextQ() {
+        var qs = getCatQs();
+        S.fmt = "";
+        S.voice = "";
+        S.ctype = "";
+        S.answer = "";
+        if (S.qIdx < qs.length - 1) {
+            S.qIdx++;
+            rQuestion();
+            window.scrollTo(0, 0);
+        }
+        else {
+            showCategories();
         }
     }
 
     async function genContent() {
         var ta = document.getElementById("ans-ta");
-        var answer = ta ? ta.value.trim() : "";
+        var answer = ta ? ta.value.trim() : S.answer.trim();
         var st = document.getElementById("gen-status");
         var btn = document.getElementById("gen-btn");
-        var fmt = S.selFmt[S.qi] || "";
-        var voiceId = S.selVoice[S.qi] || S.setup.voice || "friendly";
-
+        var out = document.getElementById("gen-output");
         if (!answer) {
             if (st)
                 st.innerHTML = '<div class="status err">Please type or speak your answer first.</div>';
             return;
         }
-        if (!fmt) {
+        if (!S.fmt || !S.voice || !S.ctype) {
             if (st)
-                st.innerHTML = '<div class="status err">Please choose a content format above.</div>';
+                st.innerHTML = '<div class="status err">Please choose a format, voice, and content goal.</div>';
             return;
         }
-
-        S.answers[S.qi] = answer;
-        sv();
+        S.answer = answer;
         if (st)
-            st.innerHTML = '<div class="status loading"><div class="spinner"></div>Generating your content — about 15 seconds…</div>';
+            st.innerHTML = '<div class="status loading"><div class="spinner"></div>Generating your content \u2014 about 15 seconds\u2026</div>';
         if (btn) {
             btn.disabled = true;
-            btn.textContent = "Generating…";
+            btn.textContent = "Generating\u2026";
         }
+        if (out)
+            out.innerHTML = '';
 
-        var q = QS[S.qi];
+        var qs = getCatQs();
+        var q = qs[S.qIdx];
+        var fmtObj = FMTS.find(function(f) {
+            return f.id === S.fmt;
+        });
+        var ctObj = CTYPES.find(function(c) {
+            return c.id === S.ctype;
+        });
         var voiceMap = {
-            authoritative: "authoritative and educational — expert-led, clear, trust-building",
-            friendly: "friendly and conversational — warm, approachable, like talking to a trusted friend",
-            entertaining: "entertaining and humorous — fun, playful, personality-forward",
-            inspirational: "inspirational and empowering — uplifting, emotional, transformational",
-            luxury: "refined and aspirational — elevated, sophisticated, curated"
+            authoritative: "authoritative and educational \u2014 expert-led, clear, builds trust",
+            conversational: "friendly and conversational \u2014 warm, approachable, like talking to a trusted friend",
+            humorous: "entertaining and humorous \u2014 fun, playful, shows personality",
+            inspirational: "inspirational and empowering \u2014 uplifting, emotional, motivating",
+            aspirational: "refined and aspirational \u2014 elevated, sophisticated, curated"
         };
-        var formatMap = {
-            shortform: "SHORT-FORM VIDEO SCRIPT (Reels/TikTok/Shorts)\nWrite a complete script with a strong hook for the first 3 seconds, the body, and a CTA. Under 60 seconds read aloud. Label sections: HOOK, BODY, CTA.",
-            longform: "LONG-FORM VIDEO OUTLINE (YouTube)\nWrite a complete outline with: title suggestion, intro hook, 3-5 main talking points with detail, and a closing CTA.",
-            carousel: "PHOTO/CAROUSEL WITH CAPTION\nWrite: 1) A complete ready-to-post caption with 3-5 hashtags. 2) Slide-by-slide text if it works as a carousel (Slide 1 = hook, last = CTA).",
-            blog: "BLOG POST SECTION\nWrite a complete section with: compelling headline, engaging intro, 2-3 body paragraphs, and a closing CTA.",
-            podcast: "PODCAST TALKING POINTS\nWrite: episode title suggestion, key talking points with detail, personal stories to expand on, and a closing thought."
+        var fmtMap = {
+            shortform: "SHORT-FORM VIDEO SCRIPT\nHook (stops the scroll in 3 seconds) + Body + CTA. Under 60 seconds read aloud. Label sections: HOOK / BODY / CTA.",
+            longform: "LONG-FORM VIDEO OUTLINE\nTitle suggestion + Intro hook + 3-5 talking points with detail + Closing CTA. Speaking guide, not word-for-word script.",
+            carousel: "CAROUSEL / CAPTION\n1) Ready-to-post caption with 3-5 hashtags. 2) Slide-by-slide text (Slide 1 = hook, final slide = CTA).",
+            blog: "BLOG POST SECTION\nCompelling headline + Engaging intro + 2-3 body paragraphs + Closing with CTA.",
+            podcast: "PODCAST TALKING POINTS\nEpisode title + Key talking points + Personal stories to expand on + Closing thought."
         };
-
-        var voiceDesc = voiceMap[voiceId] || "friendly and conversational";
-        var formatInstr = formatMap[fmt] || "Create appropriate content for this format.";
-
-        var sys = "You are a content creation assistant for a color analyst and personal stylist.\n"
-        + "Voice: " + voiceDesc + "\n"
-        + "Task: Create ONE complete piece of content from the voice note answer provided.\n"
-        + formatInstr + "\n"
-        + "Write complete, polished, ready-to-use content. No preamble or explanation — just the content itself.";
-
+        var ctaBlock = "";
+        if (S.ctype === "edu_cta" || S.ctype === "transformation") {
+            if (S.biz.name) {
+                ctaBlock = "Include a warm, inviting CTA to book with " + S.biz.name + (S.biz.location ? " in " + S.biz.location : "") + (S.biz.virtual ? ". Virtual sessions also available." : "." + " Not pushy \u2014 just a natural next step.");
+            }
+            else {
+                ctaBlock = "Include a warm, general invitation to book a session (no specific business name \u2014 keep it inviting and natural).";
+            }
+        }
+        var sys = "You are a content creation assistant for a color analyst and personal stylist.\n\nVoice: " + voiceMap[S.voice] + "\nContent goal: " + ctObj.l + " \u2014 " + ctObj.s + "\n" + (ctaBlock ? ctaBlock + "\n" : "") + "\nCreate ONE complete, polished, ready-to-use piece of content in this format:\n" + fmtMap[S.fmt] + "\n\nWrite only the content itself. No preamble, no meta-commentary, no labels like 'Here is your content'. Just the piece, ready to copy and use.";
         var usr = "Question I was answering: \"" + q.q + "\"\n\nMy answer: \"" + answer + "\"";
 
         try {
@@ -1337,106 +1263,61 @@
             var data = await resp.json();
             if (data.content && data.content[0] && data.content[0].text) {
                 var gen = data.content[0].text.trim();
-                S.content[S.qi] = gen;
-                sv();
+                window._gen = gen;
                 if (st)
-                    st.innerHTML = '<div class="status ok">&#10003; Done — copy below.</div>';
+                    st.innerHTML = '<div class="status ok">&#10003; Content generated \u2014 copy it below.</div>';
                 if (btn) {
                     btn.disabled = false;
-                    btn.textContent = "&#10022; Regenerate";
+                    btn.textContent = "&#10022; Generate Again (Different Version)";
                 }
-                var existing = document.getElementById("content-text");
-                if (existing) {
-                    existing.textContent = gen;
-                } else {
-                    var mb = document.getElementById("main-body");
-                    var outDiv = document.createElement("div");
-                    outDiv.innerHTML = '<div class="divider"></div>'
-                    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">'
-                    + '<span class="lbl" style="margin-bottom:0;color:var(--green)">Generated Content</span>'
-                    + '<button class="btn-sm btn-sm-og" id="copy-all-btn" onclick="doCopy(\'copy-all-btn\')">Copy All</button>'
-                    + '</div>'
-                    + '<div class="card card-green">'
-                    + '<div class="content-body" id="content-text">' + escHtml(gen) + '</div>'
-                    + '<button class="btn btn-og2" style="margin-bottom:0" onclick="doCopy(\'copy-main-btn\')" id="copy-main-btn">&#128203; Copy This Content</button>'
+                if (out) {
+                    out.innerHTML = '<div style="margin-top:16px">'
+                    + '<div class="info-box"><strong>&#128203; Copy this into a doc to save it.</strong><br>Want to generate a different format or voice from the same answer? Change your selections above and tap Generate Again.<br>Ready for the next question? Tap the button below.</div>'
+                    + '<div class="card card-green"><div class="content-body" id="gen-text">' + esc(gen) + '</div>'
+                    + '<button class="btn btn-og2" id="copy-btn" onclick="doCopy()" style="margin-bottom:0">&#128203; Copy This Content</button></div>'
+                    + '<button class="btn btn-gold" style="margin-top:10px" onclick="nextQ()">Next Question \u2192</button>'
                     + '</div>';
-                    mb.appendChild(outDiv);
-                    outDiv.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
                 }
             } else {
-                throw new Error("no content returned");
+                throw new Error("no content");
             }
         } catch (err) {
             if (st)
-                st.innerHTML = '<div class="status err">Something went wrong — please try again.</div>';
+                st.innerHTML = '<div class="status err">Something went wrong \u2014 please try again.</div>';
             if (btn) {
                 btn.disabled = false;
-                btn.textContent = "&#10022; Generate " + fmtL(fmt);
+                btn.textContent = "&#10022; Generate Content";
             }
         }
     }
 
-    function rSaved() {
-        var entries = Object.keys(S.content).filter(function(k) {
-            return S.content[k];
-        });
-        var html = '<div style="margin-bottom:18px">'
-        + '<div class="display" style="font-size:22px">Saved Content</div>'
-        + '<div class="sub">' + entries.length + ' question' + (entries.length !== 1 ? 's' : '') + ' completed</div>'
-        + '</div>';
-        if (entries.length === 0) {
-            html += '<div style="text-align:center;color:var(--faint);padding:32px;font-size:13px">No content yet — go back and answer some questions!</div>';
-        }
-        entries.forEach(function(idx) {
-            var content = S.content[idx];
-            var q = QS[parseInt(idx)];
-            if (!q)
-                return;
-            var preview = content.slice(0, 180) + (content.length > 180 ? '…' : '');
-            html += '<div class="card" style="margin-bottom:11px">'
-            + '<span class="cat-badge" style="background:' + q.col + '22;color:' + q.col + ';border:1px solid ' + q.col + '44;margin-bottom:10px">' + q.cat + '</span>'
-            + '<div style="font-size:13px;color:var(--text);margin-bottom:8px;line-height:1.5">' + q.q + '</div>'
-            + '<div style="font-size:12px;color:var(--faint);font-style:italic;line-height:1.6;margin-bottom:10px">' + escHtml(preview) + '</div>'
-            + '<div class="btn-row">'
-            + '<button class="btn-sm btn-sm-og" id="sv-cp-' + idx + '" onclick="svCopy(\'' + idx + '\')">Copy All</button>'
-            + '<button class="btn-sm btn-sm-od" onclick="S.qi=' + idx + ';goMain()">Edit</button>'
-            + '<button class="btn-sm btn-sm-or" onclick="delete S.content[' + idx + '];delete S.answers[' + idx + '];sv();rSaved()">Delete</button>'
-            + '</div>'
-            + '</div>';
-        });
-        if (entries.length > 0) {
-            html += '<div style="margin-top:8px"><button class="btn btn-gold" onclick="exportAll()">&#8595; Export All as Text File</button></div>';
-        }
-        document.getElementById("saved-body").innerHTML = html;
-    }
-
-    function svCopy(idx) {
-        var text = S.content[idx] || "";
-        var btnId = "sv-cp-" + idx;
-        var btn = document.getElementById(btnId);
-        function finish(ok) {
-            if (btn) {
-                var o = btn.textContent;
-                btn.textContent = ok ? "✓ Copied!" : "Copy failed";
+    function doCopy() {
+        var el = document.getElementById("gen-text");
+        var text = el ? (el.innerText || el.textContent) : (window._gen || "");
+        if (!text)
+            return;
+        function done(ok) {
+            var b = document.getElementById("copy-btn");
+            if (b) {
+                var o = b.innerHTML;
+                b.textContent = ok ? "\u2713 Copied!" : "Copy failed";
                 setTimeout(function() {
-                    btn.textContent = o;
+                    b.innerHTML = o;
                 }, 2500);
             }
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(function() {
-                finish(true);
+                done(true);
             }).catch(function() {
-                fallbackCopyText(text, btnId, finish);
+                fb(text, done);
             });
-        } else {
-            fallbackCopyText(text, btnId, finish);
+        }
+        else {
+            fb(text, done);
         }
     }
-    function fallbackCopyText(text, btnId, cb) {
+    function fb(text, cb) {
         var ta = document.createElement("textarea");
         ta.value = text;
         ta.style.position = "fixed";
@@ -1453,28 +1334,13 @@
             cb(ok);
     }
 
-    function exportAll() {
-        var out = "CONTENT STUDIO — Generated Content\n" + "=".repeat(44) + "\n" + new Date().toLocaleDateString() + "\n\n";
-        Object.keys(S.content).filter(function(k) {
-            return S.content[k];
-        }).forEach(function(idx) {
-            var q = QS[parseInt(idx)];
-            if (q)
-                out += "Q: " + q.q + "\n" + "—".repeat(40) + "\n" + S.content[idx] + "\n\n" + "═".repeat(44) + "\n\n";
-        });
-        var a = document.createElement("a");
-        a.href = URL.createObjectURL(new Blob([out], {
-            type: "text/plain"
-        }));
-        a.download = "GeneratedContent.txt";
-        a.click();
+    function esc(s) {
+        if (!s)
+            return '';
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
 
-    if (S.setup.done) {
-        goMain();
-    } else {
-        rSetup();
-    }
+    showWelcome();
     </script>
 </body>
 </html>
